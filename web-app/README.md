@@ -1,4 +1,4 @@
-# Microprofile JWT Movie Chat
+# Web App
 
 This web application aims at showing how to use Microprofile JWT to secure your microservices.
 It uses Apache TomEE as the default Microprofile implementation.
@@ -36,8 +36,6 @@ Up on start up, the movie application will populate necessary data into the API 
 ```
 mvn clean install -DskipTests tomee:run
 ```
-
-
 
 It should start on port 8181 so it does not clash with the Gateway
 So what you need is to open a browser and navigate to http://localhost:8181/moviefun/
