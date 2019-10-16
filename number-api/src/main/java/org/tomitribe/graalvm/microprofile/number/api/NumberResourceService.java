@@ -10,6 +10,6 @@ public class NumberResourceService {
         final Integer port = ConfigProvider.getConfig().getOptionalValue("NUMBER_API_PORT", Integer.class).orElse(3001);
         port(port);
         System.out.println("Server running on port " + port);
-        get("/number-api/number/generate", (req, res) -> "MV-" + (int) Math.floor((Math.random() * 9999999)) + 1);
+        get("/number-api/number/generate", (req, res) -> NumberGenerator.generate());
     }
 }

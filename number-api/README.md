@@ -65,7 +65,7 @@ curl http://localhost:3001/number-api/number/generate
 Build a native image with:
 
 ```bash
-native-image --no-server --no-fallback --report-unsupported-elements-at-runtime --initialize-at-build-time -H:+ReportExceptionStackTraces -H:+ReportUnsupportedElementsAtRuntime -H:ConfigurationFileDirectories=conf/ -jar target/number-api.jar
+native-image --language:js --no-server --no-fallback --report-unsupported-elements-at-runtime --initialize-at-build-time -H:+ReportExceptionStackTraces -H:+ReportUnsupportedElementsAtRuntime -H:ConfigurationFileDirectories=conf/ -jar target/number-api.jar
 ```
 
 Run the microservice with: 
