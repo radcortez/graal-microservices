@@ -1,12 +1,15 @@
 # GraalVM with MicroProfile
 
-This is the codebase with all the demos for the presentation GraalVM and MicroProfile: A Polyglot Microservices
+This is the codebase with all the demos for the presentation GraalVM and MicroProfile: A Polyglot Microservices 
 Solution.
 
 ## Samples Structure
 
-* libraries (a fat jar with all the microprofile required implementations to use with GraalVM)
-* number-api (a microservice endpoint in Node that generate an id number)
+* libraries (a fat jar with all the MicroProfile required implementations to use standalone with GraalVM)
+* number-api (a microservice endpoint that generate an id number, with versions for Java, Node and Ruby)
+* number-api-client (a Java client to invoke the number-api)
+* number-api-invoker (a Ruby and Python client to invoke the number-api)
+* calculator-api (a Java and R Polyglot microservice)
 
 ## Running the Samples
 
@@ -23,15 +26,14 @@ samples were tested with Graal VM version 19.1.x.
 * Install the `python` language in GraalVM with `gu install python`.
 * Rebuild the `python` language in GraalVM with `gu rebuild-images python`.
 
-### Prepare
+### Build
 
-Go to the `libraries` folder and run `mvn clean install`. This will build the fat jar with all the required
-microprofile dependencies to use with other languages.
+Run `mvn clean install`. This will build all the projects.
 
 ---
 **NOTE**: 
 
-When running node or ruby commands, make sure that you use the the binaries from the bin folder inside GraalVM. You 
+When running Node or Ruby commands, make sure that you use the the binaries from the bin folder inside GraalVM. You 
 can set a `GRAAL_HOME` to point to Graal installation folder and then use it to reference the specific binaries easier. 
 
 ---
