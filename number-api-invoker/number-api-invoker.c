@@ -1,17 +1,16 @@
 #include <stdio.h>
-#include <polyglot.h>
+#include <graalvm/llvm/polyglot.h>
 
 int main() {
-    void* webbeans = polyglot_java_type("org.apache.webbeans.config.WebBeansContext").currentInstance();
-    lifecyle = webbeans.getService(polyglot_java_type("org.apache.webbeans.spi.ContainerLifecycle"))
-    lifecyle.startApplication(None)
+    void *System = polyglot_java_type("java.lang.System");
+    void *Weld = polyglot_java_type("org.jboss.weld.environment.se.Weld");
+    void *NumberApi = polyglot_java_type("com.radcortez.graalvm.microprofile.number.api.client.NumberResourceApi");
 
-    number = polyglot_java_type("javax.enterprise.inject.spi.CDI")\
-        .current()\
-        .select(polyglot_java_type("org.tomitribe.graalvm.microprofile.number.api.client.NumberResourceApi"))\
-        .get()
+    void *weld = polyglot_new_instance(Weld);
+    void *container = polyglot_invoke(weld, "initialize");
+    void *numberApi = polyglot_invoke(polyglot_invoke(container, "select", NumberApi), "get");
+    void *value = polyglot_invoke(numberApi, "getNumber");
 
-    printf("%s\n", number);
-
-    return 0;
+    void *out = polyglot_get_member(System, "out");
+    polyglot_invoke(out, "println", value);
 }

@@ -16,7 +16,7 @@ Solution.
 ### Setup GraalVM
 
 Please refer to the [GraalVM Installation Guide](https://www.graalvm.org/docs/getting-started/#install-graalvm). These
-samples were tested with Graal VM version 19.1.x.
+samples were tested with Graal VM version 22.3.x.
 
 #### Install Ruby
 * Install the `ruby` language in GraalVM with `gu install ruby`.
@@ -33,7 +33,7 @@ Run `mvn clean install`. This will build all the projects.
 ---
 **NOTE**: 
 
-When running Node or Ruby commands, make sure that you use the the binaries from the bin folder inside GraalVM. You 
+When running Node or Ruby commands, make sure that you use the binaries from the bin folder inside GraalVM. You 
 can set a `GRAAL_HOME` to point to Graal installation folder and then use it to reference the specific binaries easier. 
 
 ---
@@ -44,7 +44,3 @@ Please refer to the specific README file for each sample:
 
 * [Number API](/number-api/README.md)
 * [Number API Invoker](/number-api-invoker/README.md)
-
-## Resources
-
-TODO 

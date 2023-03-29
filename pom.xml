@@ -27,7 +27,6 @@
   <name>Graal Microprofile - Parent</name>
 
   <modules>
-    <module>libraries</module>
     <module>number-api</module>
     <module>number-api-client</module>
     <module>calculator-api</module>

@@ -1,4 +1,4 @@
-package org.tomitribe.graalvm.microprofile.number.api;
+package com.cortez.graalvm.microprofile.number.api;
 
 import org.graalvm.polyglot.Context;
 

@@ -10,7 +10,7 @@ the number api resource.
 Run the client invoker with:
  
 ```bash
-ruby --jvm --vm.cp=../number-api-client/target/number-api-client.jar:../libraries/target/microprofile.jar --vm.Dorg.tomitribe.graalvm.microprofile.number.api.client.NumberResourceClient/mp-rest/url=http://localhost:5001/number-api/ number-api-invoker.rb
+ruby --jvm --vm.cp=../number-api-client/target/number-api-client.jar:../number-api-client/target/number-api-client-dependencies.jar --vm.Dcom.radcortez.graalvm.microprofile.number.api.client.NumberResourceClient/mp-rest/url=http://localhost:5001/number-api/ number-api-invoker.rb
 ```
 
 ## Run number-api-invoker with Python
@@ -18,5 +18,12 @@ ruby --jvm --vm.cp=../number-api-client/target/number-api-client.jar:../librarie
 Run the client invoker with:
 
 ```bash
-graalpython --jvm --vm.cp=../number-api-client/target/number-api-client.jar:../libraries/target/microprofile.jar --vm.Dorg.tomitribe.graalvm.microprofile.number.api.client.NumberResourceClient/mp-rest/url=http://localhost:5001/number-api/ number-api-invoker.py
+graalpy --jvm --vm.cp=../number-api-client/target/number-api-client.jar:../number-api-client/target/number-api-client-dependencies.jar --vm.Dcom.radcortez.graalvm.microprofile.number.api.client.NumberResourceClient/mp-rest/url=http://localhost:5001/number-api/ number-api-invoker.py
+```
+
+## Run number-api-invoker with LLVM
+
+```bash
+$LLVM_TOOLCHAIN/clang number-api-invoker.c -lgraalvm-llvm -o number-api-invoker
+lli --jvm --vm.cp=../number-api-client/target/number-api-client.jar:../number-api-client/target/number-api-client-dependencies.jar --vm.Dcom.radcortez.graalvm.microprofile.number.api.client.NumberResourceClient/mp-rest/url=http://localhost:5001/number-api/ number-api-invoker
 ```

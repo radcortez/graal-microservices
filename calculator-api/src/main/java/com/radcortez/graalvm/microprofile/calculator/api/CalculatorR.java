@@ -33,12 +33,4 @@ public enum CalculatorR {
     public Number execute(final Object... args) {
         return function.execute(args).as(Number.class);
     }
-
-
-
-
-
-
-
-
 }

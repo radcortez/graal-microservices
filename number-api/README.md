@@ -25,6 +25,7 @@ curl http://localhost:5001/number-api/number/generate
 Install Ruby Sinatra with: 
 
 ```bash
+gem install webrick
 gem install sinatra
 ```
 

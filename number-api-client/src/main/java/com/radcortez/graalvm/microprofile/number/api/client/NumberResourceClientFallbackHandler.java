@@ -1,4 +1,4 @@
-package org.tomitribe.graalvm.microprofile.number.api.client;
+package com.radcortez.graalvm.microprofile.number.api.client;
 
 import org.eclipse.microprofile.faulttolerance.ExecutionContext;
 import org.eclipse.microprofile.faulttolerance.FallbackHandler;

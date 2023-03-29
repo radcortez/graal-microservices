@@ -1,12 +1,9 @@
 import java
+Weld = java.type('org.jboss.weld.environment.se.Weld')
+NumberApi = java.type('com.radcortez.graalvm.microprofile.number.api.client.NumberResourceApi')
 
-webBeans = java.type("org.apache.webbeans.config.WebBeansContext").currentInstance()
-lifecyle = webBeans.getService(java.type("org.apache.webbeans.spi.ContainerLifecycle"))
-lifecyle.startApplication(None)
-
-numberApi = java.type("javax.enterprise.inject.spi.CDI")\
-    .current()\
-    .select(java.type("org.tomitribe.graalvm.microprofile.number.api.client.NumberResourceApi"))\
-    .get()
+weld = Weld()
+container = weld.initialize()
+numberApi = container.select(NumberApi).get()
 
 print(numberApi.getNumber())

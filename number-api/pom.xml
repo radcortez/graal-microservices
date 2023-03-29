@@ -56,7 +56,7 @@
           <appendAssemblyId>false</appendAssemblyId>
           <archive>
             <manifest>
-              <mainClass>org.tomitribe.graalvm.microprofile.number.api.NumberResourceService</mainClass>
+              <mainClass>com.cortez.graalvm.microprofile.number.api.NumberResourceService</mainClass>
             </manifest>
           </archive>
         </configuration>
