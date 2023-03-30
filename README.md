@@ -5,7 +5,6 @@ Solution.
 
 ## Samples Structure
 
-* libraries (a fat jar with all the MicroProfile required implementations to use standalone with GraalVM)
 * number-api (a microservice endpoint that generate an id number, with versions for Java, Node and Ruby)
 * number-api-client (a Java client to invoke the number-api)
 * number-api-invoker (a Ruby and Python client to invoke the number-api)
